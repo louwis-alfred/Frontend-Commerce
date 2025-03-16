@@ -1,0 +1,95 @@
+/* Base Container */
+.educationContainer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  background-image: url('https://www.transparenttextures.com/patterns/food.png');
+  color: #333;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Layouts */
+.topSections {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.bottomSection {
+  margin-top: 2rem;
+}
+
+/* Card Styling */
+.section {
+  flex: 1;
+  min-width: 280px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Link Collections */
+.linkBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual Links */
+.link {
+  display: block;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #8bc34a;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+/* Typography */
+.sectionTitle {
+  color: #8bc34a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .topSections {
+    flex-direction: column;
+  }
+  
+  .section {
+    min-width: 100%;
+  }
+}
