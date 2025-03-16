@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
-
+import { ShopContext } from '../context/ShopContext';
 const Trade = () => {
   const [sellerTo, setSellerTo] = useState('');
   const [productId, setProductId] = useState('');
   const [quantity, setQuantity] = useState(1);
-
+  const { backendUrl } = useContext(ShopContext);
   const handleTrade = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/trades/initiate',
+        `${backendUrl}/api/trades/initiate`,
         { sellerTo, productId, quantity },
         {
           headers: {

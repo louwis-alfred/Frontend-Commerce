@@ -15,7 +15,7 @@ export const InvestorProvider = ({ children }) => {
   const contactFarmer = async (contactInfo) => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4000/api/contact", contactInfo);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, contactInfo);
       alert("Message sent successfully!");
       return response.data;
     } catch (error) {
@@ -29,7 +29,7 @@ export const InvestorProvider = ({ children }) => {
   const placeInvestment = async ({ userId, videoId, amount }) => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4000/api/investment/place", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/investment/place`, {
         userId,
         videoId,
         amount,

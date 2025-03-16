@@ -43,7 +43,7 @@ const Navbar = () => {
     const checkSellerStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/user/seller-status",
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/seller-status`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -143,7 +143,7 @@ const Navbar = () => {
       if (!token) return;
 
       try {
-        const response = await axios.get("http://localhost:4000/api/user/me", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

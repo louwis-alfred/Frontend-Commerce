@@ -18,7 +18,7 @@ import SellerOrders from "./SellerOrders";
 import PropTypes from "prop-types";
 import NotificationBadge from "../components/NotificationBadge";
 import { NotificationContext } from "../context/NotificationContext";
-const backendUrl = "http://localhost:4000";
+const backendUrl = "https://e-farm-backend-4.onrender.com";
 
 const RemoveProductModal = ({
   isOpen = false,
@@ -401,7 +401,7 @@ const SellerDashboard = () => {
       const fetchProducts = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/product/seller/${sellerId}`,
+            `${backendUrl}/api/product/seller/${sellerId}`,
             {
               headers: {
                 Authorization: `Bearer ${authToken}`,
@@ -525,7 +525,7 @@ const SellerDashboard = () => {
       await Promise.all(
         selectedProductIds.map((productId) =>
           axios.delete(
-            `http://localhost:4000/api/product/remove/${productId}`,
+            `${backendUrl}/api/product/remove/${productId}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -559,14 +559,14 @@ const SellerDashboard = () => {
     data.append("sellerId", sellerId);
 
     try {
-      await axios.post("http://localhost:4000/api/product/add", data, {
+      await axios.post(`${backendUrl}/api/product/add`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       const updatedProducts = await axios.get(
-        `http://localhost:4000/api/product/seller/${sellerId}`,
+        `${backendUrl}/api/product/seller/${sellerId}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
