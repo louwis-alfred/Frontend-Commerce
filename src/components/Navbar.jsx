@@ -91,10 +91,10 @@ const Navbar = () => {
     // };
 
     checkSellerStatus();
-    // checkInvestorStatus();
+    checkInvestorStatus();
     const intervalId = setInterval(() => {
       checkSellerStatus();
-      // checkInvestorStatus();
+      checkInvestorStatus();
     }, 3000); // Reduced API calls
 
     return () => clearInterval(intervalId);
